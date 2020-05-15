@@ -11,7 +11,9 @@
     
     "require": {
         "dottwatson/limkie-framework": "*"
-    }
+    },
+
+    "minimum-stability":"dev"
 
 
 
