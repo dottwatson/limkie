@@ -10,11 +10,7 @@
     },
     
     "require": {
-        "dottwatson/limkie-framework": "*"
-    },
-
-    "minimum-stability":"dev"
-
-
+        "dottwatson/limkie-framework": "dev-master"
+    }
 
 }
