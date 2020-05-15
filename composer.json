@@ -1,0 +1,27 @@
+{
+    "name" : "dottwatson/limkie",
+    "description": "Project based on Limkie",
+    
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Modules\\": "modules/"
+        }
+    },
+    
+    "require": {
+        "dottwatson/limkie-framework": "@dev"
+    },
+
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../private/dottwatson/limkie-framework",
+            "options": {
+                "symlink": true
+            }
+        }
+    ]
+
+
+}

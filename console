@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+include './loader.php';
+include './app/bootstrap.php';
+
+
+
+$app->init();
+
+
+
+
+$app->console->listen($argv);
+
+exit;
+
+
