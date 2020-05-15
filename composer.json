@@ -10,18 +10,9 @@
     },
     
     "require": {
-        "dottwatson/limkie-framework": "@dev"
-    },
+        "dottwatson/limkie-framework": "*"
+    }
 
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../private/dottwatson/limkie-framework",
-            "options": {
-                "symlink": true
-            }
-        }
-    ]
 
 
 }
