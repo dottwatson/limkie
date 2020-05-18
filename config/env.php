@@ -41,7 +41,7 @@ return [
             'cache' => false,
         ],
 
-        'modules'=>['prova'],
+        'modules'=>['example'],
         'routes'=>['web','api','test'],
     ],
 
