@@ -53,7 +53,7 @@ pre{
     border: 1px dashed silver
 }
 
-code{border-bottom: 1px solid #410041;color:#410041;display:inline-block;}
+code{border-bottom: 1px dashed #410041;color:#410041;display:inline-block;background-color:#DADADA;padding: 0 12px;}
 
 /* ---------------------------------------------------
     SIDEBAR STYLE
