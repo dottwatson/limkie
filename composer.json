@@ -10,7 +10,8 @@
     },
     
     "require": {
-        "dottwatson/limkie-framework": "dev-master"
+        "dottwatson/limkie-framework": "dev-master",
+        "symfony/string": "^5.0"
     }
 
 }
