@@ -1,13 +1,16 @@
 <?php 
 //put boostrap code here
 
-app()->on('init',function(){
-    Limkie\Route::gate('pippo',function($args){
-        var_dump($args);
-        return response('called pippo');
-    });
-});
 
+app()->on('init',function(){
+    /**
+     * Here put all your startup code.
+     * 
+     * here all is initialized like configs, modules etc... 
+     */
+
+
+});
 
 
 ?>
