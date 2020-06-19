@@ -21,8 +21,8 @@ class Module extends CoreModule{
     public function __construct(){
         parent::__construct();
 
-        $this->loadConfig();
-        $this->loadRoute();
+        $this->importConfig();
+        $this->importRoutes();
 
         $linksPath  = configModule(static::name(),'settings.path');
         $storage    = new Storage($linksPath);
