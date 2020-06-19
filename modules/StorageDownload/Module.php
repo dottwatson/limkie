@@ -24,6 +24,13 @@ class Module extends CoreModule{
         $this->registerConfig();
         $this->registerRoutes();
 
+        $clsName = static::class;
+
+        //register the garbage collector on startup
+        app()->on('init',function() use ($clsName){
+            $clsName::garbageCleaner();
+        });
+
         $linksPath  = configModule(static::name(),'settings.path');
         $storage    = new Storage($linksPath);
 
@@ -83,22 +90,17 @@ class Module extends CoreModule{
      *
      * @return void
      */
-    public static function purgePublics(){
-        // $tmpPath    = __APP_PATH__.'/'.getEnv('TMP_DIR');
-        // $tmp        = new static($tmpPath);
-    
-        // if(!$tmp->isDir('storages')){
-        //     $tmp->createDir('storages');
-        // }
+    public static function garbageCleaner(){
+        $moduleInstance = app()->module('StorageDownload');
+        $storage        = $moduleInstance->getStorage();
+        $links          = $storage->list();
 
-        // $storages = $tmp->list('storages');
-
-        // dumpe($files);
-        // while($jsonFile = array_shift($files)){
-        //     $jsonInfo = json_decode($tmp->contentFile($jsonFile));
-        //     dumpe($jsonInfo);
-        // }
-    
+        foreach($links as $link){
+            $info = $moduleInstance->model('Download',[$link]);
+            if($info->isExpired()){
+                $storage->deleteFile($link);
+            }
+        }
     }
 
 
