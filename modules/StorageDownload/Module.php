@@ -96,7 +96,7 @@ class Module extends CoreModule{
         $links          = $storage->list();
 
         foreach($links as $link){
-            $info = $moduleInstance->model('Download',[$link]);
+            $info = $moduleInstance->model('StorageLink',[$link]);
             if($info->isExpired()){
                 $storage->deleteFile($link);
             }

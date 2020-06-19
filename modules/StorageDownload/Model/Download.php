@@ -3,12 +3,21 @@ namespace Modules\StorageDownload\Model;
 
 use limkie\Model;
 
-class Download extends Model{
+
+/**
+ * The StorageLink
+ */
+class StorageLink extends Model{
     protected $code;
     protected $filename;
     protected $storage;
 
-    public function __construct($filename){
+    /**
+     * Instantiane model based on the file
+     *
+     * @param string $filename
+     */
+    public function __construct(string $filename){
         $this->code = basename($filename,'.json');
         $data       = json_decode(file_get_contents($filename),true);
 
@@ -20,27 +29,46 @@ class Download extends Model{
     }
 
 
+    /**
+     * Return the link Url
+     *
+     * @return string
+     */
     public function getUrl(){
         $routePath = configModule('StorageDownload','settings.route');
 
         return get_url(sprintf($routePath,$this->code));
     }
 
+    /**
+     * return the code
+     *
+     * @return string
+     */
     public function getCode(){
         return $this->code;
     }
 
+    /**
+     * Check if expired based on attemps ad ttl
+     *
+     * @return boolean
+     */
     public function isExpired(){
         $ttlExpired         = ($this->get('expire',0) < time());
         $attempsExpired     = (!is_null($this->get('attemps')))
             ?$this->get('attemps') < 1
             :false;
         
-        // dumpe($ttlExpired,$attempsExpired);
-
         return ($ttlExpired || $attempsExpired)?true:false;
     }
 
+    /**
+     * remove attemps from file
+     *
+     * @param integer $num
+     * @return self
+     */
     public function discardAttemps(int $num=1){
         $attemps = $this->get('attemps');
         

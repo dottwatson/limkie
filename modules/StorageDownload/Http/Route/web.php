@@ -15,7 +15,7 @@ Limkie\Route::get(sprintf($routePath,'{code}'),function($code){
     $response       = new Response();
 
     if($storage->isFile($code.'.json')){
-        $info = $moduleInstance->model('Download',[$storage->getFullPath($code.'.json')]);
+        $info = $moduleInstance->model('StorageLink',$storage->getFullPath($code.'.json'));
 
         if($info->isValidFile() && !$info->isExpired()){
             $filePath = $info->get('file');
