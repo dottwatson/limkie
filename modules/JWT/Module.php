@@ -13,9 +13,11 @@
         public function __construct(){
             parent::__construct();
 
-            $this->importConfig();
-            $this->importGates();
-            //other stuff
+            $this->registerConfig();
+
+            $this->registerGates([
+                \Modules\JWT\Http\Gate\JWTGate::class
+            ]);
         }
 
         //code here
