@@ -1,14 +1,14 @@
 <?php
 
-    namespace Modules\StorageDownload\Http\Controller;
+    namespace Modules\StorageLink\Http\Controller;
     
     use Limkie\Http\Controller;
     
     /**
-     *  Controller StorageDownload
+     *  Controller StorageLink
      *  Created on 2020-06-18 10:29:51 using console
      */
-    class StorageDownload extends Controller{
+    class StorageLink extends Controller{
     
         public function __construct(){
             parent::__construct();

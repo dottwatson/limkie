@@ -1,12 +1,12 @@
 <?php
 
-namespace Modules\StorageDownload;
+namespace Modules\StorageLink;
 
 use Limkie\Module as CoreModule;
 use Limkie\Storage;
 
 /**
- *  Module StorageDownload
+ *  Module StorageLink
  *  This module gives you the ability to create temporay links where to download storage resources.
  *  Created on 2020-06-18 10:21:37 using console
  */
@@ -91,7 +91,7 @@ class Module extends CoreModule{
      * @return void
      */
     public static function garbageCleaner(){
-        $moduleInstance = app()->module('StorageDownload');
+        $moduleInstance = app()->module('StorageLink');
         $storage        = $moduleInstance->getStorage();
         $links          = $storage->list();
 

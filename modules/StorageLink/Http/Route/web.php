@@ -6,11 +6,11 @@ use Limkie\Http\Response;
 
 
 
-$routePath = sprintf(configModule('StorageDownload','settings.route'),'{code}');
+$routePath = sprintf(configModule('StorageLink','settings.route'),'{code}');
 
 Limkie\Route::get(sprintf($routePath,'{code}'),function($code){
     
-    $moduleInstance = app()->module('StorageDownload');
+    $moduleInstance = app()->module('StorageLink');
     $storage        = $moduleInstance->getStorage();
     $response       = new Response();
 

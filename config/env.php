@@ -22,7 +22,7 @@ return [
             'cache' => true, //enable caching 
         ],
         'routes'=>['web','api'], // routes loaded in app/Http/Route
-        'modules'=>['StorageDownload'], // witch modules are loaded in this environment
+        'modules'=>['StorageLink'], // witch modules are loaded in this environment
 
         //other stuff here
 
@@ -48,7 +48,7 @@ return [
             'cache' => true, //enable caching 
         ],
         'routes'=>['web','api'], // routes loaded in app/Http/Route
-        'modules'=>['StorageDownload'], // witch modules are loaded in this environment
+        'modules'=>['StorageLink'], // witch modules are loaded in this environment
 
         //other stuff here
     ],
@@ -73,7 +73,7 @@ return [
             'cache' => false,
         ],
 
-        'modules'=>['StorageDownload'], // witch modules are loaded in this environment
+        'modules'=>['StorageLink'], // witch modules are loaded in this environment
         'routes'=>['web','api','test'],
     
         //other stuff here

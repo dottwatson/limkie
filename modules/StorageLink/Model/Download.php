@@ -1,5 +1,5 @@
 <?php
-namespace Modules\StorageDownload\Model;
+namespace Modules\StorageLink\Model;
 
 use limkie\Model;
 
@@ -25,7 +25,7 @@ class StorageLink extends Model{
 
         $this->filename = $filename;
 
-        $this->storage = module('StorageDownload')->getStorage();
+        $this->storage = module('StorageLink')->getStorage();
     }
 
 
@@ -35,7 +35,7 @@ class StorageLink extends Model{
      * @return string
      */
     public function getUrl(){
-        $routePath = configModule('StorageDownload','settings.route');
+        $routePath = configModule('StorageLink','settings.route');
 
         return get_url(sprintf($routePath,$this->code));
     }
